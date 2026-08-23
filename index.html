@@ -73,7 +73,7 @@
       background: url('fondo_acuarela_floral.jpg') no-repeat center center / cover;
     }
 
-    /* Marco Oval Dorado Fino más transparente y sutil */
+    /* Marco Oval en Azul Oscuro Real / Azul Rey */
     .oval-gold-frame {
       width: 92%;
       max-width: 350px;
@@ -86,11 +86,11 @@
       align-items: center;
       justify-content: space-between;
       padding: 55px 16px 45px;
-      /* Fondo oval más suave y translúcido */
-      background: radial-gradient(ellipse at center, rgba(80, 110, 150, 0.22) 0%, rgba(35, 55, 85, 0.35) 100%);
-      backdrop-filter: blur(0px);
-      -webkit-backdrop-filter: blur(2px);
-      box-shadow: 0 8px 25px rgba(18, 30, 48, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.08);
+      /* Fondo azul oscuro tirando a azul rey profundo */
+      background: radial-gradient(ellipse at center, rgba(2, 103, 254, 0.711) 0%, rgb(44, 52, 68) 100%);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 10px 32px rgba(8, 20, 40, 0.55), inset 0 0 25px rgba(0, 0, 0, 0.25);
     }
 
     /* Doble línea interior fina del óvalo */
@@ -156,7 +156,7 @@
     .guest-name-text {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
-      color: #ffffff;
+      color: #282626;
       margin: 2px 0;
       font-weight: 600;
       text-shadow: 0 2px 6px rgba(0,0,0,0.6);
@@ -188,9 +188,10 @@
       display: flex;
     }
 
-    .XV{
-      color:#000000c6;
-
+    .XV {
+      color: var(--oval-gold-light);
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
     }
     .hero-center-block {
       display: flex;
@@ -204,10 +205,10 @@
     .name-isabela {
       font-family: 'Great Vibes', cursive;
       font-size: 4.8rem;
-      color: #D8C9A8;
+      color: #ffffff;
       line-height: 1;
       margin: 0;
-      text-shadow: 0 4px 14px rgba(5, 15, 30, 0.7);
+      text-shadow: 0 4px 14px rgba(5, 12, 25, 0.85);
       filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
       text-align: center;
     }
@@ -215,14 +216,14 @@
     /* Frase Emotiva dentro del Óvalo (Entre Isabela y el Contador) */
     .hero-quote {
       font-family: 'Playfair Display', serif;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       font-style: italic;
-      line-height: 1.55;
-      color: #000000a1;
+      line-height: 1.6;
+      color: #f7faff;
       text-align: center;
       max-width: 300px;
       margin: 10px auto 12px;
-      text-shadow: 0 2px 6px rgba(5, 15, 30, 0.8);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
       letter-spacing: 0.2px;
       padding: 0 4px;
     }
@@ -536,9 +537,169 @@
       font-size: 0.82rem;
       color: rgba(255, 255, 255, 0.85);
     }
+
+    /* ========================================================
+       VISTA ESPECIAL DE ENTRADA / BIENVENIDA PERSONALIZADA
+       ======================================================== */
+    .welcome-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #7d9bbd url('fondo_acuarela_floral.jpg') no-repeat center center / cover;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s ease;
+    }
+
+    .welcome-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.06);
+      pointer-events: none;
+    }
+
+    .welcome-card-modal {
+      width: 100%;
+      max-width: 375px;
+      background: radial-gradient(ellipse at center, rgba(62, 89, 128, 0.8) 0%, rgba(30, 48, 74, 0.92) 100%);
+      border: 1.8px solid var(--oval-gold);
+      border-radius: 28px;
+      padding: 38px 22px 32px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(10, 25, 45, 0.65), inset 0 0 25px rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      position: relative;
+      animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .welcome-wax-seal {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8d3a7, #b89d6c);
+      color: #18283d;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 0 10px rgba(255,255,255,0.4);
+      border: 2px solid #f7e8c3;
+    }
+
+    .welcome-lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #f7faff;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .welcome-guest-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      margin: 10px 0 14px;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+      padding: 10px 14px;
+      border-top: 1px solid rgba(216, 201, 168, 0.5);
+      border-bottom: 1px solid rgba(216, 201, 168, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .welcome-passes-badge {
+      font-size: 0.8rem;
+      color: #dce7f5;
+      margin-bottom: 12px;
+      display: block;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .welcome-event-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: #e4ecf7;
+      margin-bottom: 4px;
+      letter-spacing: 1px;
+    }
+
+    .welcome-quince-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.4rem;
+      color: #d8c9a8;
+      line-height: 1.1;
+      margin: 0 0 24px;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-open-invitation {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #f3e5c8, #d8c9a8, #b89d6c);
+      color: #172638;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 13px 26px;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 6px 20px rgba(207, 168, 104, 0.45);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 92%;
+      animation: pulseGold 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGold {
+      0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(207, 168, 104, 0.4); }
+      50% { transform: scale(1.03); box-shadow: 0 8px 26px rgba(207, 168, 104, 0.7); }
+    }
   </style>
 </head>
 <body>
+
+  <!-- VISTA ESPECIAL DE ENTRADA / BIENVENIDA PERSONALIZADA -->
+  <div id="welcomeScreen" class="welcome-overlay">
+    <div class="welcome-card-modal">
+      <div class="welcome-wax-seal">XV</div>
+      
+      <p class="welcome-lead">Tenemos el gusto de invitar a:</p>
+      
+      <h2 class="welcome-guest-name" id="welcomeGuestName">Eduardo Galvis y familia</h2>
+      <span class="welcome-passes-badge" id="welcomePassesBadge" style="display:none;"></span>
+      
+      <p class="welcome-event-text">a la celebración de los 15 Años de</p>
+      <h1 class="welcome-quince-name">Isabela Viviescas Triana</h1>
+      
+      <button class="btn-open-invitation" onclick="openInvitation()">
+        <i class="fa-solid fa-envelope-open"></i> Abrir Invitación
+      </button>
+    </div>
+  </div>
 
   <!-- Audio de Fondo -->
   <audio id="bgSong" loop>
@@ -556,13 +717,6 @@
          PORTADA PRINCIPAL (CON TU IMAGEN DE FONDO Y CONTADOR)
          ======================================================== -->
     <div class="hero-portada">
-
-      <!-- BADGE DE INVITADO PERSONALIZADO (ENCIMA DEL ÓVALO) -->
-      <div id="guestBadge" class="guest-badge" style="display: none;">
-        <span class="guest-tag">Invitación Especial Para:</span>
-        <div class="guest-name-text" id="guestNameDisplay"></div>
-        <span class="guest-passes-text" id="guestPassesDisplay"></span>
-      </div>
 
       <div class="oval-gold-frame">
         <div class="oval-decor-point top"></div>
@@ -729,25 +883,46 @@
     setInterval(updateLiveCountdown, 1000);
     updateLiveCountdown();
 
+    // FUNCIÓN PARA ABRIR LA INVITACIÓN CON TRANSICIÓN Y ACTIVAR MÚSICA
+    function openInvitation() {
+      const welcome = document.getElementById('welcomeScreen');
+      if (welcome) {
+        welcome.classList.add('hidden');
+      }
+
+      // Reproducir música automáticamente al tocar "Abrir Invitación"
+      const song = document.getElementById("bgSong");
+      const btn = document.getElementById("musicBtn");
+      if (song) {
+        song.play().then(() => {
+          if (btn) {
+            btn.classList.add("playing");
+            btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+          }
+        }).catch(err => {
+          console.log("Autoplay bloqueado:", err);
+        });
+      }
+    }
+
     // LECTURA DINÁMICA DE PARÁMETROS DEL INVITADO EN LA URL (?para=Nombre&pases=2)
     function setupGuestPersonalization() {
       const urlParams = new URLSearchParams(window.location.search);
       const guestName = urlParams.get('para') || urlParams.get('invitado') || urlParams.get('nombre');
       const guestPasses = urlParams.get('pases') || urlParams.get('cupos') || urlParams.get('lugares');
 
-      const badge = document.getElementById('guestBadge');
-      const nameDisplay = document.getElementById('guestNameDisplay');
-      const passesDisplay = document.getElementById('guestPassesDisplay');
+      const welcomeName = document.getElementById('welcomeGuestName');
+      const welcomePasses = document.getElementById('welcomePassesBadge');
       const whatsappBtn = document.getElementById('btnWhatsappRsvp');
       const phoneNumber = '573209035308'; // Teléfono para confirmación de WhatsApp
 
       if (guestName) {
-        badge.style.display = 'block';
-        nameDisplay.innerText = guestName;
+        if (welcomeName) welcomeName.innerText = guestName;
 
-        if (guestPasses) {
+        if (guestPasses && welcomePasses) {
           const num = parseInt(guestPasses);
-          passesDisplay.innerText = num === 1 ? '• 1 Pase Asignado •' : `• Válido para ${num} Pases •`;
+          welcomePasses.style.display = 'block';
+          welcomePasses.innerText = num === 1 ? '• 1 Pase Asignado •' : `• Válido para ${num} Pases •`;
         }
 
         // Personalizar el mensaje de WhatsApp que envía el invitado
@@ -755,15 +930,15 @@
         if (guestPasses) {
           rsvpText += ` (${guestPasses} ${parseInt(guestPasses) === 1 ? 'pase' : 'pases'})`;
         }
-        rsvpText += ' a los 15 Años de Isabela Viviescas Triana';
+        rsvpText += ' a los 15 Años de Isabela Viviescas Triana 👑';
 
         if (whatsappBtn) {
           whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(rsvpText)}`;
         }
       } else {
-        // Mensaje genérico si el link se abre sin nombre
+        if (welcomeName) welcomeName.innerText = 'Nuestra Querida Familia y Amigos';
         if (whatsappBtn) {
-          whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('¡Hola! Confirmo con gusto mi asistencia a los 15 Años de Isabela Viviescas Triana')}`;
+          whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('¡Hola! Confirmo con gusto mi asistencia a los 15 Años de Isabela Viviescas Triana 👑')}`;
         }
       }
     }
