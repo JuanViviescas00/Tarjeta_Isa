@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mis XV Años • Isabela </title>
+  
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --oval-gold: #cfa868;
+      --oval-gold-light: #e8d3a7;
+      --glass-box: rgba(255, 255, 255, 0.22);
+      --glass-border: rgba(255, 255, 255, 0.45);
+      --text-gold: #cbb07a;
+      --primary-dark: #1e3047;
+      --accent-blue: #3b5f8f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #10161f;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Contenedor principal estilo smartphone */
+    .mobile-screen {
+      width: 100%;
+      max-width: 440px;
+      min-height: 100vh;
+      background-color: #7d9bbd;
+      position: relative;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ========================================================
+       PORTADA HERO (CON TU IMAGEN DE FONDO FLORAL EXACTA)
+       ======================================================== */
+    .hero-portada {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 18px 24px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      /* Imagen exacta subida por el usuario */
+      background: url('fondo_acuarela_floral.jpg') no-repeat center center / cover;
+    }
+
+    /* Marco Oval Dorado Fino más transparente y sutil */
+    .oval-gold-frame {
+      width: 92%;
+      max-width: 350px;
+      min-height: 590px;
+      border: 1.8px solid var(--oval-gold);
+      border-radius: 50% / 37%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 55px 16px 45px;
+      /* Fondo oval más suave y translúcido */
+      background: radial-gradient(ellipse at center, rgba(80, 110, 150, 0.22) 0%, rgba(35, 55, 85, 0.35) 100%);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(2px);
+      box-shadow: 0 8px 25px rgba(18, 30, 48, 0.25), inset 0 0 20px rgba(255, 255, 255, 0.08);
+    }
+
+    /* Doble línea interior fina del óvalo */
+    .oval-gold-frame::after {
+      content: '';
+      position: absolute;
+      top: 5px; left: 5px; right: 5px; bottom: 5px;
+      border: 0.8px solid rgba(232, 211, 167, 0.45);
+      border-radius: 50% / 37%;
+      pointer-events: none;
+    }
+
+    /* Destellos / Rombos dorados en los extremos */
+    .oval-decor-point {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: var(--oval-gold);
+      transform: rotate(45deg);
+      box-shadow: 0 0 8px rgba(207, 168, 104, 0.8);
+    }
+    .oval-decor-point.top { top: -5px; }
+    .oval-decor-point.bottom { bottom: -5px; }
+
+    /* Corona en Dorado Platinado */
+    .crown-icon {
+      width: 78px;
+      height: 50px;
+      margin: 0 auto 8px;
+      display: block;
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
+    }
+
+    /* Badge de Invitado Personalizado */
+    .guest-badge {
+      background: rgba(255, 255, 255, 0.22);
+      border: 1.2px solid var(--oval-gold-light);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 14px;
+      padding: 8px 18px;
+      margin: 0 auto 12px;
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(10, 20, 35, 0.35);
+      max-width: 90%;
+      animation: fadeInDown 0.8s ease;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .guest-tag {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f7e8c3;
+      display: block;
+      font-weight: 600;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+    .guest-name-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin: 2px 0;
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .guest-passes-text {
+      font-size: 0.76rem;
+      color: #dce7f5;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-top-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+    /* "Mis XV Años" */
+    .title-mis-xv {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: #f7f7f7df;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      margin: 0;
+      text-align: center;
+      display: flex;
+    }
+
+    .XV{
+      color:#000000c6;
+
+    }
+    .hero-center-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    /* Nombre "Isabela" Centrado */
+    .name-isabela {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.8rem;
+      color: #D8C9A8;
+      line-height: 1;
+      margin: 0;
+      text-shadow: 0 4px 14px rgba(5, 15, 30, 0.7);
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+      text-align: center;
+    }
+
+    /* Frase Emotiva dentro del Óvalo (Entre Isabela y el Contador) */
+    .hero-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.86rem;
+      font-style: italic;
+      line-height: 1.55;
+      color: #000000a1;
+      text-align: center;
+      max-width: 300px;
+      margin: 10px auto 12px;
+      text-shadow: 0 2px 6px rgba(5, 15, 30, 0.8);
+      letter-spacing: 0.2px;
+      padding: 0 4px;
+    }
+
+    .hero-bottom-block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ========================================================
+       CAJAS DEL CONTADOR EN TIEMPO REAL
+       ======================================================== */
+    .countdown-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      width: 100%;
+      max-width: 310px;
+      margin: 6px auto 14px;
+    }
+
+    .countdown-card {
+      background: var(--glass-box);
+      border: 1px solid var(--glass-border);
+      border-radius: 13px;
+      padding: 12px 2px 10px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+    }
+
+    .countdown-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .countdown-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    }
+
+    .countdown-unit {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: #e4ecf7;
+      margin-top: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Separador con Fecha: ─── 12.09.2026 ─── */
+    .date-separator {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 6px 0 16px;
+      width: 85%;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .date-separator::before,
+    .date-separator::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Monograma XV Dorado con Corazón */
+    .monogram-container {
+      margin-top: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .monogram-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.9rem;
+      font-weight: 600;
+      color: var(--oval-gold-light);
+      letter-spacing: 4px;
+      line-height: 0.9;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .monogram-heart-flourish {
+      color: var(--oval-gold-light);
+      font-size: 1.2rem;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+    }
+    .monogram-heart-flourish::before,
+    .monogram-heart-flourish::after {
+      content: '';
+      width: 25px;
+      height: 1px;
+      background: var(--oval-gold-light);
+    }
+
+    /* Indicador de Desplazamiento */
+    .scroll-hint {
+      margin-top: 18px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: floatUpDown 2s infinite ease-in-out;
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ========================================================
+       SECCIONES DE DETALLES Y MAPAS
+       ======================================================== */
+    .details-section {
+      padding: 24px 20px 40px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      background: linear-gradient(to bottom, #7290b5 0%, #46678e 40%, #263e5b 100%);
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .detail-card {
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 20px;
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--primary-dark);
+      box-shadow: 0 12px 28px rgba(15, 28, 45, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      position: relative;
+    }
+
+    /* Tarjeta de Mensaje Emotivo / Bendición */
+    .quote-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-left: 4px solid var(--oval-gold);
+      border-right: 4px solid var(--oval-gold);
+      padding: 30px 24px 26px;
+    }
+
+    .quote-ornament {
+      font-size: 2.4rem;
+      color: var(--oval-gold);
+      line-height: 1;
+      margin-bottom: 6px;
+      opacity: 0.85;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: #2b3e54 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .quote-flourish {
+      color: var(--oval-gold);
+      font-size: 1rem;
+      letter-spacing: 4px;
+      opacity: 0.85;
+    }
+
+    .icon-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b5f8f, #243c5e);
+      color: var(--oval-gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      margin: 0 auto 14px;
+      box-shadow: 0 4px 12px rgba(36, 60, 94, 0.3);
+    }
+
+    .detail-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: #1a2838;
+      margin-bottom: 4px;
+    }
+
+    .detail-card .time-tag {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .detail-card p {
+      font-size: 0.88rem;
+      color: #556578;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .btn-action-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #3b5f8f, #274063);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 4px 14px rgba(39, 64, 99, 0.28);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      width: 85%;
+    }
+
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(39, 64, 99, 0.38);
+    }
+
+    .btn-whatsapp-rsvp {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.32);
+      width: 90%;
+      font-size: 0.92rem;
+      padding: 14px 20px;
+    }
+
+    .color-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 14px 0 10px;
+    }
+    .color-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    }
+
+    /* Botón Flotante de Música */
+    .floating-music {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #3b5f8f;
+      border: 2px solid var(--oval-gold);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 100;
+      transition: transform 0.2s;
+    }
+    .floating-music.playing {
+      animation: spinSlow 6s linear infinite;
+    }
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .footer-web {
+      text-align: center;
+      padding: 20px 20px 30px;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Audio de Fondo -->
+  <audio id="bgSong" loop>
+    <source src="https://assets.mixkit.co/music/preview/mixkit-gentle-acoustic-guitar-5.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Botón Reproductor -->
+  <div class="floating-music" id="musicBtn" onclick="toggleAudio()" title="Música">
+    <i class="fa-solid fa-music"></i>
+  </div>
+
+  <div class="mobile-screen">
+
+    <!-- ========================================================
+         PORTADA PRINCIPAL (CON TU IMAGEN DE FONDO Y CONTADOR)
+         ======================================================== -->
+    <div class="hero-portada">
+      <div class="oval-gold-frame">
+        <div class="oval-decor-point top"></div>
+        <div class="oval-decor-point bottom"></div>
+
+        <!-- 1. CORONA Y TÍTULO -->
+        <div class="hero-top-block">
+          
+          <!-- BADGE DE INVITADO PERSONALIZADO (Aparece automáticamente si la URL tiene ?para=Nombre) -->
+          <div id="guestBadge" class="guest-badge" style="display: none;">
+            <span class="guest-tag">Pase Personalizado Para:</span>
+            <div class="guest-name-text" id="guestNameDisplay"></div>
+            <span class="guest-passes-text" id="guestPassesDisplay"></span>
+          </div>
+
+          <svg class="crown-icon" viewBox="0 0 100 65" fill="none"  xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="crownGrad" x1="15" y1="14" x2="85" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#f3e5c8"/>
+                <stop offset="0.5" stop-color="#d8c9a8"/>
+                <stop offset="1" stop-color="#b89d6c"/>
+              </linearGradient>
+            </defs>
+            <path d="M15 52 C35 56, 65 56, 85 52 C85 55, 15 55, 15 52 Z" fill="#d8c9a8"/>
+            <path d="M12 48 C35 53, 65 53, 88 48 C85 51, 15 51, 12 48 Z" fill="#e8d3a7"/>
+            <path d="M15 48 L22 26 L38 38 L50 14 L62 38 L78 26 L85 48 C65 54, 35 54, 15 48 Z" fill="url(#crownGrad)" stroke="#cfa868" stroke-width="1.2"/>
+            <circle cx="50" cy="11" r="3.5" fill="#ffffff" stroke="#cfa868" stroke-width="1"/>
+            <circle cx="22" cy="23" r="2.5" fill="#ffffff" stroke="#cfa868" stroke-width="1"/>
+            <circle cx="78" cy="23" r="2.5" fill="#ffffff" stroke="#cfa868" stroke-width="1"/>
+            <circle cx="38" cy="36" r="2" fill="#ffffff" stroke="#cfa868" stroke-width="1"/>
+            <circle cx="62" cy="36" r="2" fill="#ffffff" stroke="#cfa868" stroke-width="1"/>
+            <polygon points="50,27 54,33 50,39 46,33" fill="#ffffff" opacity="0.9"/>
+          </svg>
+          <div class="title-mis-xv">Mis <p class="XV">XV</p> Años</div>
+        </div>
+
+        <!-- 2. NOMBRE CENTRADO -->
+        <div class="hero-center-block">
+          <div class="name-isabela">Isabela</div>
+        </div>
+
+        <!-- 3. FRASE EMOTIVA (ENTRE ISABELA Y EL CONTADOR) -->
+        <p class="hero-quote">
+          Con el amor de Dios y la bendición de mi familia, me siento muy feliz de llegar a este momento de mi vida. Los invito a compartir conmigo este día tan especial.
+        </p>
+
+        <!-- 4. CONTADOR EN LA PARTE INFERIOR -->
+        <div class="hero-bottom-block">
+          <!-- CONTADOR EN TIEMPO REAL -->
+          <div class="countdown-container">
+            <div class="countdown-card">
+              <span class="countdown-number" id="boxDays">00</span>
+              <span class="countdown-unit">días</span>
+            </div>
+            <div class="countdown-card">
+              <span class="countdown-number" id="boxHours">00</span>
+              <span class="countdown-unit">horas</span>
+            </div>
+            <div class="countdown-card">
+              <span class="countdown-number" id="boxMinutes">00</span>
+              <span class="countdown-unit">minutos</span>
+            </div>
+            <div class="countdown-card">
+              <span class="countdown-number" id="boxSeconds">00</span>
+              <span class="countdown-unit">segundos</span>
+            </div>
+          </div>
+
+          <!-- LÍNEA FECHA: 12.09.2026 -->
+          <div class="date-separator">12.09.2026</div>
+
+          <!-- MONOGRAMA / ADORNO -->
+          <div class="monogram-container">
+            <div class="monogram-heart-flourish">❦ ♡ ❦</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="scroll-hint">
+        <span>Desliza para ver los detalles</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         SECCIONES DE DETALLES Y MAPAS
+         ======================================================== -->
+    <div class="details-section">
+
+      
+
+      <!-- RECEPCIÓN / FIESTA -->
+      <div class="detail-card">
+        <div class="icon-badge"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <h3>Recepción</h3>
+        <div class="time-tag">6:00 PM</div>
+        <p>
+          <strong>Sitio</strong><br>
+          Cl. 20 # 8-30, San Gil, Santander
+        </p>
+        <a href="https://maps.app.goo.gl/GaTSpA4DvV8jt6de8" target="_blank" class="btn-action-primary">
+          <i class="fa-solid fa-location-dot"></i> Ver Ubicación GPS
+        </a>
+      </div>
+
+      <!-- CÓDIGO DE VESTIMENTA -->
+      <div class="detail-card">
+        <div class="icon-badge"><i class="fa-solid fa-vest-patches"></i></div>
+        <h3>Código de Vestimenta</h3>
+        <div class="time-tag">Informal</div>
+        <p>Nos encantará que nos acompañes con tu mejor atuendo.</p>
+        
+      
+        <small style="color: #8898aa; font-size: 0.78rem;">(Color azul rey reservado para la quinceañera)</small>
+      </div>
+
+      <!-- CONFIRMACIÓN WHATSAPP (RSVP) -->
+      <div class="detail-card">
+        <div class="icon-badge" style="background: linear-gradient(135deg, #25d366, #128c7e); color: #fff;">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <h3>Confirmar Asistencia</h3>
+        <p>
+          Por favor confirma tu presencia antes del <strong>5 de Septiembre de 2026</strong> para considerarte en nuestra lista de invitados.
+        </p>
+        <a id="btnWhatsappRsvp" href="https://wa.me/573209035308" target="_blank" class="btn-action-primary btn-whatsapp-rsvp">
+          <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia por WhatsApp
+        </a>
+      </div>
+
+      <!-- LLUVIA DE SOBRES -->
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-web">
+      <p>Con mucho cariño, ¡te esperamos!</p>
+      <p style="margin-top: 6px; opacity: 0.6;">Isabela Viviescas Triana • Mis XV Años</p>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT: CONTADOR EN VIVO, CONTROL DE AUDIO Y PERSONALIZACIÓN DE INVITADO -->
+  <script>
+    // Fecha y hora del evento: (Año, Mes - 1, Día, Hora, Minuto, Segundo)
+    // Ejemplo: 12 de Septiembre de 2026 a las 17:00 (5:00 PM)
+    const targetEventDate = new Date(2026, 8, 12, 17, 0, 0).getTime();
+
+    function updateLiveCountdown() {
+      const now = new Date().getTime();
+      const distance = targetEventDate - now;
+
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("boxDays").innerText = String(days).padStart(2, '0');
+        document.getElementById("boxHours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("boxMinutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("boxSeconds").innerText = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById("boxDays").innerText = "00";
+        document.getElementById("boxHours").innerText = "00";
+        document.getElementById("boxMinutes").innerText = "00";
+        document.getElementById("boxSeconds").innerText = "00";
+      }
+    }
+
+    setInterval(updateLiveCountdown, 1000);
+    updateLiveCountdown();
+
+    // LECTURA DINÁMICA DE PARÁMETROS DEL INVITADO EN LA URL (?para=Nombre&pases=2)
+    function setupGuestPersonalization() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const guestName = urlParams.get('para') || urlParams.get('invitado') || urlParams.get('nombre');
+      const guestPasses = urlParams.get('pases') || urlParams.get('cupos') || urlParams.get('lugares');
+
+      const badge = document.getElementById('guestBadge');
+      const nameDisplay = document.getElementById('guestNameDisplay');
+      const passesDisplay = document.getElementById('guestPassesDisplay');
+      const whatsappBtn = document.getElementById('btnWhatsappRsvp');
+      const phoneNumber = '573209035308'; // Teléfono para confirmación de WhatsApp
+
+      if (guestName) {
+        badge.style.display = 'block';
+        nameDisplay.innerText = guestName;
+
+        if (guestPasses) {
+          const num = parseInt(guestPasses);
+          passesDisplay.innerText = num === 1 ? '• 1 Pase Asignado •' : `• Válido para ${num} Pases •`;
+        }
+
+        // Personalizar el mensaje de WhatsApp que envía el invitado
+        let rsvpText = `¡Hola! ${guestName} confirma con gusto su asistencia`;
+        if (guestPasses) {
+          rsvpText += ` (${guestPasses} ${parseInt(guestPasses) === 1 ? 'pase' : 'pases'})`;
+        }
+        rsvpText += ' a los 15 Años de Isabela Viviescas Triana 👑';
+
+        if (whatsappBtn) {
+          whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(rsvpText)}`;
+        }
+      } else {
+        // Mensaje genérico si el link se abre sin nombre
+        if (whatsappBtn) {
+          whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('¡Hola! Confirmo con gusto mi asistencia a los 15 Años de Isabela Viviescas Triana 👑')}`;
+        }
+      }
+    }
+
+    setupGuestPersonalization();
+
+    function toggleAudio() {
+      const song = document.getElementById("bgSong");
+      const btn = document.getElementById("musicBtn");
+      if (song.paused) {
+        song.play().then(() => {
+          btn.classList.add("playing");
+          btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        }).catch(err => {
+          console.log("Autoplay bloqueado:", err);
+        });
+      } else {
+        song.pause();
+        btn.classList.remove("playing");
+        btn.innerHTML = '<i class="fa-solid fa-music"></i>';
+      }
+    }
+  </script>
+</body>
+</html>
