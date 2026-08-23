@@ -124,19 +124,21 @@
       filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
     }
 
-    /* Badge de Invitado Personalizado */
+    /* Badge de Invitado Personalizado (Encima del Óvalo) */
     .guest-badge {
-      background: rgba(255, 255, 255, 0.22);
-      border: 1.2px solid var(--oval-gold-light);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 14px;
-      padding: 8px 18px;
-      margin: 0 auto 12px;
+      background: rgba(255, 255, 255, 0.28);
+      border: 1.5px solid var(--oval-gold);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 9px 24px;
+      margin: 0 auto 18px;
       text-align: center;
-      box-shadow: 0 4px 18px rgba(10, 20, 35, 0.35);
-      max-width: 90%;
+      box-shadow: 0 6px 20px rgba(15, 28, 45, 0.35);
+      max-width: 92%;
+      width: fit-content;
       animation: fadeInDown 0.8s ease;
+      z-index: 5;
     }
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-8px); }
@@ -554,20 +556,20 @@
          PORTADA PRINCIPAL (CON TU IMAGEN DE FONDO Y CONTADOR)
          ======================================================== -->
     <div class="hero-portada">
+
+      <!-- BADGE DE INVITADO PERSONALIZADO (ENCIMA DEL ÓVALO) -->
+      <div id="guestBadge" class="guest-badge" style="display: none;">
+        <span class="guest-tag">Invitación Especial Para:</span>
+        <div class="guest-name-text" id="guestNameDisplay"></div>
+        <span class="guest-passes-text" id="guestPassesDisplay"></span>
+      </div>
+
       <div class="oval-gold-frame">
         <div class="oval-decor-point top"></div>
         <div class="oval-decor-point bottom"></div>
 
         <!-- 1. CORONA Y TÍTULO -->
         <div class="hero-top-block">
-          
-          <!-- BADGE DE INVITADO PERSONALIZADO (Aparece automáticamente si la URL tiene ?para=Nombre) -->
-          <div id="guestBadge" class="guest-badge" style="display: none;">
-            <span class="guest-tag">Pase Personalizado Para:</span>
-            <div class="guest-name-text" id="guestNameDisplay"></div>
-            <span class="guest-passes-text" id="guestPassesDisplay"></span>
-          </div>
-
           <svg class="crown-icon" viewBox="0 0 100 65" fill="none"  xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="crownGrad" x1="15" y1="14" x2="85" y2="52" gradientUnits="userSpaceOnUse">
@@ -753,7 +755,7 @@
         if (guestPasses) {
           rsvpText += ` (${guestPasses} ${parseInt(guestPasses) === 1 ? 'pase' : 'pases'})`;
         }
-        rsvpText += ' a los 15 Años de Isabela Viviescas Triana 👑';
+        rsvpText += ' a los 15 Años de Isabela Viviescas Triana';
 
         if (whatsappBtn) {
           whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(rsvpText)}`;
@@ -761,7 +763,7 @@
       } else {
         // Mensaje genérico si el link se abre sin nombre
         if (whatsappBtn) {
-          whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('¡Hola! Confirmo con gusto mi asistencia a los 15 Años de Isabela Viviescas Triana 👑')}`;
+          whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent('¡Hola! Confirmo con gusto mi asistencia a los 15 Años de Isabela Viviescas Triana')}`;
         }
       }
     }
